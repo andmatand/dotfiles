@@ -35,3 +35,9 @@ cd $PACKDIR/opt
 
 # Install optional packages
 git clone https://github.com/JamshedVesuna/vim-markdown-preview.git
+
+echo
+echo "Also make sure to install these things:"
+echo "* DejaVu Sans Mono (https://dejavu-fonts.github.io/)"
+echo "* ag (https://github.com/ggreer/the_silver_searcher)"
+echo
