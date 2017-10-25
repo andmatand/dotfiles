@@ -37,7 +37,22 @@ cd $PACKDIR/opt
 git clone https://github.com/JamshedVesuna/vim-markdown-preview.git
 
 echo
-echo "Also make sure to install these things:"
+echo "Also make sure to install these dependencies:"
 echo "* DejaVu Sans Mono (https://dejavu-fonts.github.io/)"
 echo "* ag (https://github.com/ggreer/the_silver_searcher)"
 echo
+read -p "Press ENTER to try installing them automatically based on your OS..."
+echo
+
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+  set -x
+  sudo apt-get install fonts-dejavu silversearcher-ag
+  set +x
+elif [[ "$unamestr" == 'Darwin' ]]; then
+  set -x
+  brew tap caskroom/fonts
+  brew cask install font-dejavu-sans
+  brew install the_silver_searcher
+  set +x
+fi
