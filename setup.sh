@@ -12,11 +12,11 @@ mkdir -p $PACKDIR/start
 cd $PACKDIR/start
 
 # Install startup packages
+git clone https://github.com/airblade/vim-gitgutter
 git clone https://github.com/dyng/ctrlsf.vim.git
 git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/haya14busa/vim-asterisk.git
 git clone https://github.com/kien/ctrlp.vim.git
-git clone https://github.com/mhinz/vim-signify.git
 git clone https://github.com/morhetz/gruvbox.git
 git clone https://github.com/ntpeters/vim-better-whitespace.git
 git clone https://github.com/qpkorr/vim-renamer.git

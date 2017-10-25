@@ -87,8 +87,9 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 nnoremap <Space> i <Esc>
 
 " Refresh several things with F5
-" (ctrp.vim, vim-signify, syntax highlighting weirdness)
-nnoremap <F5> :CtrlPClearCache<CR>:SignifyRefresh<CR>:syntax sync fromstart<CR>
+" (ctrp.vim, vim-gitgutter, syntax highlighting weirdness)
+nnoremap <F5> :CtrlPClearCache<CR>:GitGutter<CR>:syntax sync fromstart<CR>
+    \:<backspace>
 
 " Pretty-print JSON with \j. Works on a selection or a whole buffer.
 nnoremap <leader>j :%!python -m json.tool<CR>:set ft=json<CR>
