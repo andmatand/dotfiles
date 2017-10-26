@@ -45,11 +45,11 @@ read -p "Press ENTER to try installing everything automatically based on your OS
 echo
 
 unamestr=$(uname)
-if [[ "$unamestr" == 'Linux' ]]; then
+if [ "$unamestr" = 'Linux' ]; then
   set -x
   sudo apt-get install vim-gtk3 fonts-dejavu silversearcher-ag
   set +x
-elif [[ "$unamestr" == 'Darwin' ]]; then
+elif [ "$unamestr" = 'Darwin' ]; then
   set -x
   brew cask install macvim
   brew install vim
