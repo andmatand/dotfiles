@@ -1,7 +1,6 @@
 #!/bin/sh
 
-ROOT=$(pwd)
-PACKDIR=$ROOT/pack/andmatand
+source paths.sh
 
 # Make directories which vimrc expects to exist
 mkdir -p $ROOT/tmp
