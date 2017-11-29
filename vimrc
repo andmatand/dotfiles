@@ -93,7 +93,11 @@ nnoremap <F5> :CtrlPClearCache<CR>:GitGutter<CR>:syntax sync fromstart<CR>
 
 " Pretty-print JSON with \j. Works on a selection or a whole buffer.
 nnoremap <leader>j :%!python -m json.tool<CR>:set ft=json<CR>
-vnoremap <leader>j :!python -m json.tool<CR>:set ft=json<CR>
+vnoremap <leader>j :!python -m json.tool<CR>
+
+" Pretty-print XML with \x. Works on a selection or a whole buffer.
+nnoremap <leader>x :%!XMLLINT_INDENT="    " xmllint --format -<CR>:set ft=xml<CR>
+vnoremap <leader>x :!XMLLINT_INDENT="    " xmllint --format -<CR>
 
 
 

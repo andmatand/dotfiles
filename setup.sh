@@ -46,14 +46,15 @@ echo
 unamestr=$(uname)
 if [ "$unamestr" = 'Linux' ]; then
   set -x
-  sudo apt-get install vim-gtk3 fonts-dejavu silversearcher-ag
+  sudo apt-get install vim-gtk3 fonts-dejavu silversearcher-ag libxml2-utils
   set +x
 elif [ "$unamestr" = 'Darwin' ]; then
   set -x
+  brew install vim the_silver_searcher libxml2
   brew cask install macvim
-  brew install vim
+
+  # DejaVu Sans Mono
   brew tap caskroom/fonts
   brew cask install font-dejavu-sans
-  brew install the_silver_searcher
   set +x
 fi
