@@ -156,6 +156,7 @@ let g:ctrlp_user_command = ['.git',
 " ctrlsf.vim
 " Open CtrlSFPrompt with Ctrl + S
 nmap <C-S> <Plug>CtrlSFPrompt
+vmap <C-S> <Plug>CtrlSFVwordPath
 let g:ctrlsf_default_root = 'project'
 let g:ctrlsf_winsize = '90%'
 let g:ctrlsf_ignore_dir = ["build"]
