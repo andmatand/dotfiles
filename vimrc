@@ -123,8 +123,8 @@ autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
 " Go: Use tabs, displayed as 8 spaces
 au BufNewFile,BufRead *.go setlocal noet tabstop=8 shiftwidth=8 softtabstop=8
 
-" JavaScript: use 2 spaces for tabs
-set tabstop=8 expandtab shiftwidth=2 softtabstop=2
+" JavaScript: use 4 spaces for tabs
+set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 " Markdown: Use 4-space tabs
 au BufNewFile,BufRead *.md setlocal expandtab ts=4 sw=4 softtabstop=4
