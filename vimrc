@@ -31,6 +31,9 @@ set autoindent
 set copyindent
 set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+" Set default formatoptions
+set formatoptions=tcroqlj
+
 " Diable annoying audio bell
 set visualbell
 
@@ -124,10 +127,12 @@ autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
 au BufNewFile,BufRead *.go setlocal noet tabstop=8 shiftwidth=8 softtabstop=8
 
 " JavaScript: use 4 spaces for tabs
-set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType js,javascript.jsx setlocal et ts=8 sw=4 sts=4
 
-" Markdown: Use 4-space tabs
-au BufNewFile,BufRead *.md setlocal expandtab ts=4 sw=4 softtabstop=4
+" Markdown: Use 4-space tabs, wrap long lines while typing
+au FileType markdown setlocal et ts=4 sw=4 sts=4 tw=80 fo-=l
+let g:vim_markdown_fenced_languages = ['bash=sh', 'js', 'json']
+
 
 
 
