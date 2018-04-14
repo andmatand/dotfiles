@@ -112,9 +112,10 @@ function! InitPico8()
     setlocal ft=lua ts=2 sw=2 sts=2
     set foldmethod=manual
     normal zE
-    call feedkeys("/__lua__/\<CR>zfgg", 'x')
-    call feedkeys("/__gfx__/\<CR>zfG", 'x')
+    call feedkeys("/__lua__$/\<CR>zfgg", 'x')
+    call feedkeys("/__gfx__$/\<CR>zfG", 'x')
     normal gg
+    ALEDisableBuffer
 endfunction
 
 " PHP
