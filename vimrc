@@ -81,8 +81,8 @@ endif
 " Clear hlsearch with backspace
 nnoremap <backspace> :noh<CR>:<backspace>
 
-" Map <Enter> to insert a new empty line above the current line
-nnoremap <CR> O<Esc>
+" Map <Enter> to insert a line-break before the current character
+nnoremap <CR> i<CR><Esc>
 " But in the quickfix list, let Enter still behave normally
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
