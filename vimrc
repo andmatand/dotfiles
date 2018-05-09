@@ -2,14 +2,14 @@
 autocmd BufEnter * silent! lcd %:p:h
 let g:netrw_keepdir=0
 
-" Search
+" Set search options
 set ignorecase
 set smartcase
 set gdefault
 set incsearch
 set hlsearch
 
-" Display
+" Set display options
 syntax on
 set showcmd " Show selection length in ruler
 set ruler
@@ -28,8 +28,6 @@ endif
 " Indenting
 filetype plugin indent on
 set autoindent
-set copyindent
-set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 " Set default formatoptions
 set formatoptions=tcroqlj
@@ -37,12 +35,11 @@ set formatoptions=tcroqlj
 " Diable annoying audio bell
 set visualbell
 
-" Backspace
+" Make backspace work as expected
 set backspace=indent,eol,start
 
-" GVim
+" Set GVim options
 if has("gui_running")
-    "colorscheme slate
     colorscheme gruvbox
     set background=dark
 
@@ -51,7 +48,9 @@ if has("gui_running")
 
     if has("macunix")
         set guifont=DejaVu\ Sans\ Mono:h14
-    else
+    elseif has("win32")
+        set guifont=dejavu_sans_mono:h10.5:w6
+    else " Linux
         set guifont=DejaVu\ Sans\ Mono\ 14px
     endif
     set linespace=5
@@ -66,9 +65,6 @@ if has('persistent_undo')
     set undofile
     set undodir=$HOME/.vim/undo
 endif
-
-" Windows Fixes
-"set guifont=dejavu_sans_mono:h10.5:w6 " Use pretty font
 
 " Source .vimrc after saving it
 if has("autocmd")
@@ -118,25 +114,12 @@ function! InitPico8()
     ALEDisableBuffer
 endfunction
 
-" PHP
-au BufRead,BufNewFile *.php setlocal formatoptions-=w
-
-" CSS: Make C-n autocomplete more useful
+" CSS: Make Ctrl + n/p autocomplete more useful
 autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
 
-" Go: Use tabs, displayed as 8 spaces
-au BufNewFile,BufRead *.go setlocal noet tabstop=8 shiftwidth=8 softtabstop=8
-
-" JavaScript: use 4 spaces for tabs
-au FileType js,javascript.jsx setlocal et ts=8 sw=4 sts=4
-
-" Markdown: Use 4-space tabs, wrap long lines while typing
-au FileType markdown setlocal et ts=4 sw=4 sts=4 tw=80 fo-=l
+" Markdown: Wrap long lines while typing
+au FileType markdown setlocal fo-=l
 let g:vim_markdown_fenced_languages = ['bash=sh', 'js', 'json']
-
-
-
-
 
 
 
