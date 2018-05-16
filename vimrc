@@ -25,9 +25,10 @@ if has("wildmenu")
     set wildmenu
 endif
 
-" Indenting
+" Set indenting options
 filetype plugin indent on
 set autoindent
+set expandtab shiftwidth=4 tabstop=4
 
 " Set default formatoptions
 set formatoptions=tcroqlj
