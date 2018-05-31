@@ -103,7 +103,6 @@ vnoremap <leader>x :!XMLLINT_INDENT="    " xmllint --format -<CR>
 
 " FILETYPE-SPECIFIC STUFF ====================================================
 " PICO-8: Use lua syntax highlighting, use 2-space tabs, fold non-lua sections
-let g:syntastic_ignore_files = ['\.p8$']
 au BufRead,BufNewFile *.p8 call InitPico8()
 function! InitPico8()
     setlocal ft=lua ts=2 sw=2 sts=2
