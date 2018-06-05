@@ -118,7 +118,7 @@ endfunction
 autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
 
 " Markdown: Wrap long lines while typing
-au FileType markdown setlocal fo-=l
+autocmd FileType markdown setlocal formatoptions-=l textwidth=80
 let g:vim_markdown_fenced_languages = ['bash=sh', 'js', 'json']
 
 
