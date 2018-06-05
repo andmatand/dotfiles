@@ -170,6 +170,9 @@ let g:ale_linters = {'go': [ 'go vet', 'golint', 'gometalinter', 'go build', 'go
 let g:go_metalinter_autosave = 0
 let g:go_fmt_fail_silently = 0
 
+" vim-gitgutter
+set updatetime=250
+
 " vim-markdown-preview
 let vim_markdown_preview_toggle = 2 " Generate markdown preview on buffer write
 let vim_markdown_preview_github = 1
