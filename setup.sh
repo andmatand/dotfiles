@@ -20,6 +20,7 @@ git clone https://github.com/morhetz/gruvbox.git
 git clone https://github.com/ntpeters/vim-better-whitespace.git
 git clone https://github.com/qpkorr/vim-renamer.git
 git clone https://github.com/sheerun/vim-polyglot.git
+git clone https://github.com/tpope/vim-characterize
 git clone https://github.com/tpope/vim-commentary.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/tpope/vim-repeat.git
