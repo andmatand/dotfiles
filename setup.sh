@@ -11,24 +11,10 @@ mkdir -p $PACKDIR/start
 cd $PACKDIR/start
 
 # Install startup packages
-git clone https://github.com/airblade/vim-gitgutter
-git clone https://github.com/dyng/ctrlsf.vim.git
-git clone https://github.com/fatih/vim-go.git
-git clone https://github.com/haya14busa/vim-asterisk.git
-git clone https://github.com/kien/ctrlp.vim.git
-git clone https://github.com/morhetz/gruvbox.git
-git clone https://github.com/ntpeters/vim-better-whitespace.git
-git clone https://github.com/qpkorr/vim-renamer.git
-git clone https://github.com/sheerun/vim-polyglot.git
-git clone https://github.com/tpope/vim-characterize
-git clone https://github.com/tpope/vim-commentary.git
-git clone https://github.com/tpope/vim-fugitive.git
-git clone https://github.com/tpope/vim-repeat.git
-git clone https://github.com/tpope/vim-sleuth.git
-git clone https://github.com/tpope/vim-surround.git
-git clone https://github.com/tpope/vim-vinegar.git
-git clone https://github.com/w0rp/ale.git
-git clone https://github.com/will133/vim-dirdiff.git
+IFS=$'\n'
+while read url; do
+  git clone $url
+done < $ROOT/plugins.list
 
 # Make a directory for optional packages
 mkdir -p $PACKDIR/opt
