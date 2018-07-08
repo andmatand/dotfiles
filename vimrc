@@ -106,7 +106,8 @@ vnoremap <leader>x :!XMLLINT_INDENT="    " xmllint --format -<CR>
 au BufRead,BufNewFile *.p8 call InitPico8()
 function! InitPico8()
     setlocal ft=lua ts=2 sw=2 sts=2
-    set foldmethod=manual
+    setlocal foldmethod=manual
+    setlocal ambiwidth=double
     normal zE
     call feedkeys("/__lua__$/\<CR>zfgg", 'x')
     call feedkeys("/__gfx__$/\<CR>zfG", 'x')
