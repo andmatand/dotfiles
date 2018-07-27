@@ -190,4 +190,4 @@ set statusline=%{LinterStatus()}
 " Add ruler and git status (via vim-fugitive) to right side of statusline
 set statusline+=%=
 set statusline+=%{fugitive#statusline()}
-set statusline+=\ \ %=%l\:%c\ \ \ 
+set statusline+=\ %=%l\:%c\ \ \ 
