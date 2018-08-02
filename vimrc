@@ -118,8 +118,7 @@ endfunction
 " CSS: Make Ctrl + n/p autocomplete more useful
 autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
 
-" Markdown: Wrap long lines while typing
-autocmd FileType markdown setlocal formatoptions-=l textwidth=80
+" Markdown: use syntax highlighting in fenced code blocks? (doesn't work)
 let g:vim_markdown_fenced_languages = ['bash=sh', 'js', 'json']
 
 
