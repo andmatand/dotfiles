@@ -57,6 +57,10 @@ if has("gui_running")
     set linespace=5
 end
 
+" Set split options
+set splitbelow
+set splitright
+
 " Save temp files in a global directory
 set directory=~/.vim/tmp
 set backupdir=~/.vim/tmp
