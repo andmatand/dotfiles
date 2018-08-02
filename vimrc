@@ -164,7 +164,13 @@ function! LinterStatus() abort
     \   all_errors
     \)
 endfunction
-let g:ale_linters = {'go': [ 'go vet', 'golint', 'gometalinter', 'go build', 'gosimple', 'staticcheck']}
+let g:ale_linters = {
+\    'go': [ 'go vet', 'golint', 'gometalinter', 'go build', 'gosimple', 'staticcheck'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
 
 " vim-go
 let g:go_metalinter_autosave = 0
