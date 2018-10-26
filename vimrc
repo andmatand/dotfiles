@@ -103,7 +103,8 @@ vnoremap <leader>j :!python -m json.tool<CR>
 nnoremap <leader>x :%!XMLLINT_INDENT="    " xmllint --format -<CR>:set ft=xml<CR>
 vnoremap <leader>x :!XMLLINT_INDENT="    " xmllint --format -<CR>
 
-
+" Insert current date with \d
+nnoremap <leader>d :put =strftime('%F')<CR>
 
 " FILETYPE-SPECIFIC STUFF ====================================================
 " PICO-8: Use lua syntax highlighting, use 2-space tabs, fold non-lua sections
