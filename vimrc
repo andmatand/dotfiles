@@ -46,7 +46,8 @@ set background=dark
 " Set GVim options
 if has("gui_running")
     set guioptions-=T " Disable the toolbar
-    set columns=120 lines=40
+    set guioptions-=r " Disable right scrollbar
+    set columns=84 lines=40
 
     if has("macunix")
         set guifont=DejaVu\ Sans\ Mono:h14
@@ -193,11 +194,40 @@ let vim_markdown_preview_hotkey='<leader>m'
 
 
 
-" STATUS LINE ==================================================
+" STATUS LINE ================================================================
+function! SelectionStatus() abort
+    let l:key = 'visual_chars'
+    let l:wc = wordcount()
+    if has_key(l:wc, l:key)
+        let l:chars = l:wc[l:key]
+        let l:lines = abs(line('v') - line('.')) + 1
+        if l:chars > 1
+            if l:lines > 1
+                return l:lines . ' line(s), ' . l:chars . ' char(s) '
+            elseif mode() ==# 'V'
+                return l:chars . ' char(s) '
+            endif
+        endif
+    endif
+    return ''
+endfunction
+function! DiffFlag()
+    return &diff ? '[diff]' : ''
+endfunction
 set laststatus=2
-set statusline=%#WarningMsg#%{LinterStatus()}\%* " ALE status
-set statusline+=\ %{FugitiveStatusline()}        " git branch
-set statusline+=\ %f                             " filename
-set statusline+=\ %h%m%r                         " flags: help, modified, RO
-set statusline+=%=                               " begin right side
-set statusline+=%-9(%l\:%c%)                     " ruler
+set stl=%#WarningMsg#%{LinterStatus()}\%* " ALE status
+set stl+=\ %{FugitiveStatusline()}        " git branch
+set stl+=\ %f                             " filename
+set stl+=\ %h%m%r%w%{DiffFlag()}          " flags: help, mod, RO, preview, diff
+set stl+=%=                               " begin right side
+set stl+=\ %{SelectionStatus()}           " Custom info on visual selection
+set stl+=\ %-9(%l\:%c%)\ %P\              " ruler
+
+
+
+" VIMRC OVERRIDES ============================================================
+" Load computer-specific overrides file if present
+let vimrc_override = 'vimrc.override'
+if filereadable($vimrc_override)
+    source $vimrc_override
+endif
