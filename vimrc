@@ -12,7 +12,6 @@ set hlsearch
 " Set display options
 syntax on
 set showcmd " Show selection length in ruler
-set ruler
 set colorcolumn=80
 set completeopt-=preview
 
@@ -39,11 +38,13 @@ set visualbell
 " Make backspace work as expected
 set backspace=indent,eol,start
 
+" Set colorscheme
+colorscheme gruvbox
+set background=dark
+"set termguicolors
+
 " Set GVim options
 if has("gui_running")
-    colorscheme gruvbox
-    set background=dark
-
     set guioptions-=T " Disable the toolbar
     set columns=120 lines=40
 
@@ -73,7 +74,7 @@ endif
 
 " Source .vimrc after saving it
 if has("autocmd")
-    autocmd! bufwritepost .vimrc source $MYVIMRC
+    autocmd! bufwritepost vimrc source $MYVIMRC
 endif
 
 
@@ -164,7 +165,7 @@ function! LinterStatus() abort
     let l:all_non_errors = l:counts.total - l:all_errors
 
     return l:counts.total == 0 ? '' : printf(
-    \   '%dW %dE',
+    \   '%dW %dE ',
     \   all_non_errors,
     \   all_errors
     \)
@@ -193,11 +194,10 @@ let vim_markdown_preview_hotkey='<leader>m'
 
 
 " STATUS LINE ==================================================
-set statusline=\ 
 set laststatus=2
-set statusline=%{LinterStatus()}
-
-" Add ruler and git status (via vim-fugitive) to right side of statusline
-set statusline+=%=
-set statusline+=%{fugitive#statusline()}
-set statusline+=\ %=%l\:%c\ \ \ 
+set statusline=%#WarningMsg#%{LinterStatus()}\%* " ALE status
+set statusline+=\ %{FugitiveStatusline()}        " git branch
+set statusline+=\ %f                             " filename
+set statusline+=\ %h%m%r                         " flags: help, modified, RO
+set statusline+=%=                               " begin right side
+set statusline+=%-9(%l\:%c%)                     " ruler
