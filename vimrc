@@ -111,14 +111,16 @@ nnoremap <leader>d :put =strftime('%F')<CR>
 " FILETYPE-SPECIFIC STUFF ====================================================
 " PICO-8: Use lua syntax highlighting, use 2-space tabs, fold non-lua sections
 au BufRead,BufNewFile *.p8 call InitPico8()
-function! InitPico8()
+function! InitPico8() abort
     setlocal ft=lua ts=2 sw=2 sts=2
     setlocal foldmethod=manual
     setlocal ambiwidth=double
     normal zE
     call feedkeys("/__lua__$/\<CR>zfgg", 'x')
-    call feedkeys("/__gfx__$/\<CR>zfG", 'x')
-    normal gg
+    if search('^__gfx__$') > 0
+        call feedkeys("zfG", 'x')
+    endif
+    normal ggj
     ALEDisableBuffer
 endfunction
 
