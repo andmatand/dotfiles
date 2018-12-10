@@ -218,11 +218,11 @@ function! DiffFlag()
 endfunction
 set laststatus=2
 set stl=%#WarningMsg#%{LinterStatus()}\%* " ALE status
-set stl+=\ %{FugitiveStatusline()}        " git branch
+set stl+=%(\ [%<%{fugitive#head()}]%)     " git branch
 set stl+=\ %f                             " filename
-set stl+=\ %h%m%r%w%{DiffFlag()}          " flags: help, mod, RO, preview, diff
+set stl+=%(\ %h%m%r%w%{DiffFlag()}%)      " flags: help, mod, RO, preview, diff
 set stl+=%=                               " begin right side
-set stl+=\ %{SelectionStatus()}           " Custom info on visual selection
+set stl+=%(\ %{SelectionStatus()}%)       " Custom info on visual selection
 set stl+=\ %-9(%l\:%c%)\ %P\              " ruler
 
 
