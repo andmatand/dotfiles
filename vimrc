@@ -168,7 +168,7 @@ function! LinterStatus() abort
     let l:all_non_errors = l:counts.total - l:all_errors
 
     return l:counts.total == 0 ? '' : printf(
-    \   '%dW %dE ',
+    \   '%dW %dE',
     \   all_non_errors,
     \   all_errors
     \)
@@ -217,7 +217,7 @@ function! DiffFlag()
     return &diff ? '[diff]' : ''
 endfunction
 set laststatus=2
-set stl=%#WarningMsg#%{LinterStatus()}\%* " ALE status
+set stl=%#WarningMsg#%(\ %{LinterStatus()}\ %)%* " ALE status
 set stl+=%(\ [%<%{fugitive#head()}]%)     " git branch
 set stl+=\ %f                             " filename
 set stl+=%(\ %h%m%r%w%{DiffFlag()}%)      " flags: help, mod, RO, preview, diff
