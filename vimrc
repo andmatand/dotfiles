@@ -47,6 +47,7 @@ set background=dark
 if has("gui_running")
     set guioptions-=T " Disable the toolbar
     set guioptions-=r " Disable right scrollbar
+    set guioptions+=k " Prevent auto-resizing of window
     set columns=84 lines=40
 
     if has("macunix")
