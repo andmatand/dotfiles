@@ -198,32 +198,34 @@ let vim_markdown_preview_hotkey='<leader>m'
 
 
 " STATUS LINE ================================================================
-function! SelectionStatus() abort
+function! SelectionChars() abort
     let l:key = 'visual_chars'
     let l:wc = wordcount()
     if has_key(l:wc, l:key)
-        let l:chars = l:wc[l:key]
         let l:lines = abs(line('v') - line('.')) + 1
-        if l:chars > 1
-            if l:lines > 1
-                return l:lines . ' line(s), ' . l:chars . ' char(s) '
-            elseif mode() ==# 'V'
-                return l:chars . ' char(s) '
-            endif
+        let l:chars = l:wc[l:key]
+        if l:chars > 1 && (mode() ==# 'V' || l:lines > 1)
+            return printf('%d chars', l:chars)
         endif
     endif
     return ''
 endfunction
+function! AutoreadFlag()
+    return &autoread ? '[AR]' : ''
+endfunction
 function! DiffFlag()
     return &diff ? '[diff]' : ''
 endfunction
+function! OtherFlags()
+    return AutoreadFlag() . DiffFlag()
+endfunction
 set laststatus=2
 set stl=%#WarningMsg#%(\ %{LinterStatus()}\ %)%* " ALE status
-set stl+=%(\ [%<%{fugitive#head()}]%)     " git branch
+set stl+=%(\ ➤%<%{fugitive#head()}%)      " git branch
 set stl+=\ %f                             " filename
-set stl+=%(\ %h%m%r%w%{DiffFlag()}%)      " flags: help, mod, RO, preview, diff
+set stl+=%(\ %h%m%r%w%{OtherFlags()}%)    " flags: help, mod, RO, preview, etc.
 set stl+=%=                               " begin right side
-set stl+=%(\ %{SelectionStatus()}%)       " Custom info on visual selection
+set stl+=%(\ %{SelectionChars()}\ %)      " Chararacter-count in selection
 set stl+=\ %-9(%l\:%c%)\ %P\              " ruler
 
 
