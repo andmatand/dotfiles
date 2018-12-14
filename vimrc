@@ -82,6 +82,10 @@ endif
 
 
 " KEY MAPPINGS ===============================================================
+" Use <Space> as leader
+let mapleader = "\<Space>"
+nnoremap <Space> <Nop>
+
 " Clear hlsearch with backspace
 nnoremap <backspace> :noh<CR>:<backspace>
 
@@ -90,24 +94,24 @@ nnoremap <CR> i<CR><Esc>
 " But in the quickfix list, let Enter still behave normally
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
-" Map <Space> to insert a space before the current character
-nnoremap <Space> i <Esc>
-
 " Refresh several things with F5
 " (ctrp.vim, vim-gitgutter, syntax highlighting weirdness)
 nnoremap <F5> :CtrlPClearCache<CR>:GitGutter<CR>:syntax sync fromstart<CR>
     \:<backspace>
 
-" Pretty-print JSON with \j. Works on a selection or a whole buffer.
+" Pretty-print JSON with <leader>j. Works on a selection or a whole buffer.
 nnoremap <leader>j :%!python -m json.tool<CR>:set ft=json<CR>
 vnoremap <leader>j :!python -m json.tool<CR>
 
-" Pretty-print XML with \x. Works on a selection or a whole buffer.
+" Pretty-print XML with <leader>x. Works on a selection or a whole buffer.
 nnoremap <leader>x :%!XMLLINT_INDENT="    " xmllint --format -<CR>:set ft=xml<CR>
 vnoremap <leader>x :!XMLLINT_INDENT="    " xmllint --format -<CR>
 
-" Insert current date with \d
+" Insert current date with <leader>d
 nnoremap <leader>d :put =strftime('%F')<CR>
+
+" Open CtrlPMRUFiles with <leader>
+nnoremap <leader>f :CtrlPMRUFiles<CR>
 
 " FILETYPE-SPECIFIC STUFF ====================================================
 " PICO-8: Use lua syntax highlighting, use 2-space tabs, fold non-lua sections
