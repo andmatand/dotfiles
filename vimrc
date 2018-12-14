@@ -221,7 +221,7 @@ function! OtherFlags()
 endfunction
 set laststatus=2
 set stl=%#WarningMsg#%(\ %{LinterStatus()}\ %)%* " ALE status
-set stl+=%(\ ➤%<%{fugitive#head()}%)      " git branch
+set stl+=%(\ ➤%<%{fugitive#head()}\ %)    " git branch
 set stl+=\ %f                             " filename
 set stl+=%(\ %h%m%r%w%{OtherFlags()}%)    " flags: help, mod, RO, preview, etc.
 set stl+=%=                               " begin right side
