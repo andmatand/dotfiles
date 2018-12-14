@@ -1,6 +1,17 @@
 #!/bin/bash
 source paths.sh
 
+# Clone any new plugins
+IFS=$'\n'
+cd $PACKDIR/start
+while read url; do
+  if [ ! -d `basename $url .git` ]
+  then
+    git clone $url
+  fi
+done < $ROOT/plugins.list
+cd -
+
 for dir in $PACKDIR/start $PACKDIR/opt; do
   cd $dir
 
