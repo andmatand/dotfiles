@@ -175,7 +175,7 @@ function! LinterStatus() abort
     \)
 endfunction
 let g:ale_linters = {
-\    'go': [ 'go vet', 'golint', 'go build', 'gosimple', 'staticcheck'],
+\    'go': ['go vet', 'golint', 'go build', 'gosimple', 'staticcheck'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
