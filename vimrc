@@ -187,8 +187,15 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 " vim-go
+set autowrite
 let g:go_metalinter_autosave = 0
 let g:go_fmt_fail_silently = 0
+let g:go_highlight_types = 1
+let g:go_def_mapping_enabled = 0
+let g:go_def_reuse_buffer = 1
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap gd <Plug>(go-def-split)
 
 " vim-gitgutter
 set updatetime=250
