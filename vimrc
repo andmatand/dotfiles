@@ -32,7 +32,7 @@ set expandtab shiftwidth=4 tabstop=4
 " Set default formatoptions
 set formatoptions=croqlj
 
-" Diable annoying audio bell
+" Disable annoying audio bell
 set visualbell
 
 " Make backspace work as expected
