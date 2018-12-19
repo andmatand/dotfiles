@@ -82,17 +82,14 @@ endif
 
 
 " KEY MAPPINGS ===============================================================
-" Use <Space> as leader
-let mapleader = "\<Space>"
-nnoremap <Space> <Nop>
+" Use <CR> as leader
+let mapleader = "\<CR>"
 
 " Clear hlsearch with backspace
 nnoremap <backspace> :noh<CR>:<backspace>
 
-" Map <Enter> to insert a line-break before the current character
-nnoremap <CR> i<CR><Esc>
-" But in the quickfix list, let Enter still behave normally
-autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+" Map <Space> to insert a space before the current character
+nnoremap <Space> i <Esc>
 
 " Refresh several things with F5
 " (ctrp.vim, vim-gitgutter, syntax highlighting weirdness)
