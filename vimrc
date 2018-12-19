@@ -30,7 +30,7 @@ set autoindent
 set expandtab shiftwidth=4 tabstop=4
 
 " Set default formatoptions
-set formatoptions=tcroqlj
+set formatoptions=croqlj
 
 " Diable annoying audio bell
 set visualbell
