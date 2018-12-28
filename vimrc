@@ -250,7 +250,4 @@ set stl+=\ %-9(%l\:%c%)\ %P\              " ruler
 
 " VIMRC OVERRIDES ============================================================
 " Load computer-specific overrides file if present
-let vimrc_override = 'vimrc.override'
-if filereadable($vimrc_override)
-    source $vimrc_override
-endif
+runtime vimrc.override
