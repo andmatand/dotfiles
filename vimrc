@@ -82,8 +82,9 @@ endif
 
 
 " KEY MAPPINGS ===============================================================
-" Use <CR> as leader
-let mapleader = "\<CR>"
+" Use <Tab> (and alternately <CR>) as leader
+let mapleader = "\<Tab>"
+nmap <CR> <Tab>
 
 " Clear hlsearch with backspace
 nnoremap <backspace> :noh<CR>:<backspace>
