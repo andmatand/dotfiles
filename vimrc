@@ -15,8 +15,10 @@ set showcmd " Show selection length in ruler
 set colorcolumn=80
 set completeopt-=preview
 
+" Enable filetype detection and loading of plugin and indent files
+filetype plugin indent on
+
 " Enable matchit
-filetype plugin on
 runtime macros/matchit.vim
 
 " Enable wildmenu
@@ -25,7 +27,6 @@ if has("wildmenu")
 endif
 
 " Set indenting options
-filetype plugin indent on
 set autoindent
 set expandtab shiftwidth=4 tabstop=4
 
