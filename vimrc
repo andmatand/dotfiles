@@ -3,36 +3,26 @@ set autochdir
 let g:netrw_keepdir=0
 
 " Set search options
-set ignorecase smartcase gdefault incsearch hlsearch
+set ignorecase smartcase gdefault hlsearch
 
 " Set display options
 syntax on
 set showcmd " Show selection length in ruler
 set colorcolumn=80
 set completeopt-=preview
+set scrolloff=0
 
 " Enable filetype detection and loading of plugin and indent files
 filetype plugin indent on
 
-" Enable matchit
-runtime macros/matchit.vim
-
-" Enable wildmenu
-if has('wildmenu')
-    set wildmenu
-endif
-
 " Set default indenting options
-set autoindent expandtab shiftwidth=4 tabstop=4
+set expandtab shiftwidth=4 tabstop=4
 
 " Set default formatoptions
 set formatoptions=croqlj
 
-" Disable annoying audio bell
+" Disable annoying audio bell in favor of visual bell
 set visualbell
-
-" Make backspace work as expected
-set backspace=indent,eol,start
 
 " Set colorscheme
 colorscheme gruvbox
@@ -60,9 +50,10 @@ endif
 
 
 " KEY MAPPINGS ===============================================================
-" Use <Tab> (and alternately <CR>) as leader
+" Use <Tab> (and alternately <CR> or backslash) as leader
 let mapleader = "\<Tab>"
 nmap <CR> <Tab>
+nmap \ <Tab>
 
 " Clear hlsearch with backspace
 nnoremap <backspace> :noh<CR>:<backspace>
@@ -90,7 +81,6 @@ nnoremap <leader>d :put =strftime('%F')<CR>
 nnoremap <leader>f :CtrlPMRUFiles<CR>
 
 " FILETYPE-SPECIFIC STUFF ====================================================
-
 " CSS: Make Ctrl + n/p autocomplete more useful
 autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
 
@@ -192,20 +182,13 @@ function! SelectionChars() abort
     endif
     return ''
 endfunction
-function! AutoreadFlag()
-    return &autoread ? '[AR]' : ''
-endfunction
 function! DiffFlag()
     return &diff ? '[diff]' : ''
 endfunction
-function! OtherFlags()
-    return AutoreadFlag() . DiffFlag()
-endfunction
-set laststatus=2
 set stl=%#WarningMsg#%(\ %{LinterStatus()}\ %)%* " ALE status
 set stl+=%(\ %<➤%{fugitive#head()}\ %)    " git branch
 set stl+=\ %f                             " filename
-set stl+=%(\ %h%m%r%w%{OtherFlags()}%)    " flags: help, mod, RO, preview, etc.
+set stl+=%(\ %h%m%r%w%{DiffFlag()}%)      " flags: help, mod, RO, preview, etc.
 set stl+=%(\ %{ObsessionStatus('[session]','[paused]')}\ %) " vim-obsession
 set stl+=%=                               " begin right side
 set stl+=%(\ %{SelectionChars()}\ %)      " Chararacter-count in selection
