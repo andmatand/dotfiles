@@ -77,8 +77,9 @@ vnoremap <leader>x :!XMLLINT_INDENT="    " xmllint --format -<CR>
 " Insert current date with <leader>d
 nnoremap <leader>d :put =strftime('%F')<CR>
 
-" Open CtrlPMRUFiles with <leader>
+" Use CtrlP to see recent files with <leader>f and buffers with <leader>b
 nnoremap <leader>f :CtrlPMRUFiles<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 " FILETYPE-SPECIFIC STUFF ====================================================
 " CSS: Make Ctrl + n/p autocomplete more useful
