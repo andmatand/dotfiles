@@ -1,13 +1,9 @@
 " Always set the working directory to the current file's directory
-autocmd BufEnter * silent! lcd %:p:h
+set autochdir
 let g:netrw_keepdir=0
 
 " Set search options
-set ignorecase
-set smartcase
-set gdefault
-set incsearch
-set hlsearch
+set ignorecase smartcase gdefault incsearch hlsearch
 
 " Set display options
 syntax on
@@ -22,13 +18,12 @@ filetype plugin indent on
 runtime macros/matchit.vim
 
 " Enable wildmenu
-if has("wildmenu")
+if has('wildmenu')
     set wildmenu
 endif
 
-" Set indenting options
-set autoindent
-set expandtab shiftwidth=4 tabstop=4
+" Set default indenting options
+set autoindent expandtab shiftwidth=4 tabstop=4
 
 " Set default formatoptions
 set formatoptions=croqlj
@@ -44,26 +39,8 @@ colorscheme gruvbox
 set background=dark
 "set termguicolors
 
-" Set GVim options
-if has("gui_running")
-    set guioptions-=T " Disable the toolbar
-    set guioptions-=r " Disable right scrollbar
-    set guioptions+=k " Prevent auto-resizing of window
-    set columns=84 lines=40
-
-    if has("macunix")
-        set guifont=DejaVu\ Sans\ Mono:h14
-    elseif has("win32")
-        set guifont=dejavu_sans_mono:h10.5:w6
-    else " Linux
-        set guifont=DejaVu\ Sans\ Mono\ 14px
-    endif
-    set linespace=5
-end
-
 " Set split options
-set splitbelow
-set splitright
+set splitbelow splitright
 
 " Save temp files in a global directory
 set directory=~/.vim/tmp
@@ -76,7 +53,7 @@ if has('persistent_undo')
 endif
 
 " Source .vimrc after saving it
-if has("autocmd")
+if has('autocmd')
     autocmd! bufwritepost vimrc source $MYVIMRC
 endif
 
@@ -156,7 +133,7 @@ nmap <C-S> <Plug>CtrlSFPrompt
 vmap <C-S> <Plug>CtrlSFVwordPath
 let g:ctrlsf_default_root = 'project'
 let g:ctrlsf_winsize = '90%'
-let g:ctrlsf_ignore_dir = ["build"]
+let g:ctrlsf_ignore_dir = ['build']
 
 " ALE
 let g:ale_open_list = 0
