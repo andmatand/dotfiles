@@ -11,3 +11,7 @@ else " Linux
     set guifont=DejaVu\ Sans\ Mono\ 14px
 endif
 set linespace=5
+
+" GVIMRC OVERRIDES ===========================================================
+" Load computer-specific overrides file if present
+runtime gvimrc.override

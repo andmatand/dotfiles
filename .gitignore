@@ -3,3 +3,4 @@
 /undo/*
 .netrwhist
 vimrc.override
+gvimrc.override
