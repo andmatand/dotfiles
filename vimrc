@@ -89,7 +89,6 @@ autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
 let g:markdown_fenced_languages = [
 \    'bash=sh',
 \    'html',
-\    'java',
 \    'javascript',
 \    'js=javascript',
 \    'json',
