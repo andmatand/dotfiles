@@ -189,7 +189,7 @@ set stl=%#WarningMsg#%(\ %{LinterStatus()}\ %)%* " ALE status
 set stl+=%(\ %<➤%{fugitive#head()}\ %)    " git branch
 set stl+=\ %f                             " filename
 set stl+=%(\ %h%m%r%w%{DiffFlag()}%)      " flags: help, mod, RO, preview, etc.
-set stl+=%(\ %{ObsessionStatus('[session]','[paused]')}\ %) " vim-obsession
+set stl+=%(\ %{ObsessionStatus('[session]','')}\ %) " vim-obsession
 set stl+=%=                               " begin right side
 set stl+=%(\ %{SelectionChars()}\ %)      " Chararacter-count in selection
 set stl+=\ %-9(%l\:%c%)\ %P\              " ruler
