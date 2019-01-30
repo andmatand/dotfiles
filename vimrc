@@ -10,6 +10,7 @@ syntax on
 set showcmd " Show selection length in ruler
 set colorcolumn=80
 set completeopt-=preview
+set list
 
 " Enable filetype detection and loading of plugin and indent files
 filetype plugin indent on
