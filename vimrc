@@ -6,14 +6,10 @@ let g:netrw_keepdir=0
 set ignorecase smartcase gdefault hlsearch
 
 " Set display options
-syntax on
 set showcmd " Show selection length in ruler
 set colorcolumn=80
 set completeopt-=preview
 set list
-
-" Enable filetype detection and loading of plugin and indent files
-filetype plugin indent on
 
 " Set default indenting options
 set expandtab shiftwidth=4 tabstop=4
