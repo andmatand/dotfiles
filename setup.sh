@@ -14,7 +14,7 @@ cd $PACKDIR/start
 IFS=$'\n'
 while read url; do
   git clone $url
-done < $ROOT/plugins.list
+done < $ROOT/packages.list
 
 # Make a directory for optional packages
 mkdir -p $PACKDIR/opt

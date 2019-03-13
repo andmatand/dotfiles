@@ -1,7 +1,7 @@
 #!/bin/bash
 source paths.sh
 
-# Clone any new plugins
+# Clone any new packages
 IFS=$'\n'
 cd $PACKDIR/start
 while read url; do
@@ -9,7 +9,7 @@ while read url; do
   then
     git clone $url
   fi
-done < $ROOT/plugins.list
+done < $ROOT/packages.list
 cd -
 
 for dir in $PACKDIR/start $PACKDIR/opt; do
