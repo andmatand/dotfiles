@@ -12,7 +12,7 @@ set completeopt-=preview
 set list
 
 " Set default indenting options
-set expandtab shiftwidth=4 tabstop=4
+set expandtab shiftwidth=4
 
 " Set default formatoptions
 set formatoptions=croqlj
