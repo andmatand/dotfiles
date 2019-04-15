@@ -1,5 +1,5 @@
-git@github.com:andmatand/vim-pico8-syntax.git
 https://github.com/airblade/vim-gitgutter.git
+https://github.com/andmatand/vim-pico8-syntax.git
 https://github.com/ap/vim-css-color.git
 https://github.com/ctrlpvim/ctrlp.vim.git
 https://github.com/dyng/ctrlsf.vim.git
