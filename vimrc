@@ -107,6 +107,8 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 40
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_root_markers = ['node_modules', '.npmrc', '.nvmrc']
+
 let g:ctrlp_custom_ignore =
     \ '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 " Ignore files in .gitignore
@@ -118,6 +120,7 @@ let g:ctrlp_user_command = ['.git',
 nmap <C-S> <Plug>CtrlSFPrompt
 vmap <C-S> <Plug>CtrlSFVwordPath
 let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_extra_root_markers = ['node_modules', '.npmrc', '.nvmrc']
 let g:ctrlsf_winsize = '90%'
 let g:ctrlsf_ignore_dir = ['build']
 
