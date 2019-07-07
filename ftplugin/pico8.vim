@@ -15,7 +15,9 @@ function! FoldNonLuaSections() abort
     normal ggj
 endfunction
 
-call FoldNonLuaSections()
+if search('^__lua__$') > 0
+    call FoldNonLuaSections()
+endif
 
 " Disable ALE because I don't know how to make that ignore the non-lua sections
 ALEDisableBuffer
