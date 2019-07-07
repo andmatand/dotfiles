@@ -27,5 +27,5 @@ zstyle ':completion:*' menu select
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
-source ~/.zsh_aliases
-source ~/.zshrc.local
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

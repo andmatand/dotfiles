@@ -3,4 +3,4 @@ export EDITOR=$(which vim)
 export VISUAL="$EDITOR"
 
 # Local Overrides
-source ~/.zshenv.local
+[ -f ~/.zshenv.local ] && source ~/.zshenv.local
