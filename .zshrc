@@ -17,12 +17,15 @@ KEYTIMEOUT=1
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
 
 autoload -Uz compinit
 compinit
 
 zstyle ':completion:*' menu select
+
+setopt append_history hist_find_no_dups
+setopt auto_cd
+setopt menu_complete
 
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
