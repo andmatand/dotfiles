@@ -30,5 +30,9 @@ setopt menu_complete
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
+zmodload zsh/complist
+bindkey -M menuselect '^M' .accept-line
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
