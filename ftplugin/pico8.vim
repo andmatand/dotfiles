@@ -1,6 +1,5 @@
 function! FoldNonLuaSections() abort
     setlocal foldmethod=manual
-    setlocal ambiwidth=double
     normal zE
     call feedkeys("/__lua__$/\<CR>zfgg", 'x')
 
@@ -21,3 +20,6 @@ endif
 
 " Disable ALE because I don't know how to make that ignore the non-lua sections
 ALEDisableBuffer
+
+setlocal sw=2 ts=2 sts=2
+setlocal nolist
