@@ -46,9 +46,8 @@ endif
 
 
 " KEY MAPPINGS ===============================================================
-" Use <Tab> (and alternately <CR> or backslash) as leader
+" Use <Tab> (and alternately backslash) as leader
 let mapleader = "\<Tab>"
-nmap <CR> <Tab>
 nmap \ <Tab>
 
 " Clear hlsearch with backspace
