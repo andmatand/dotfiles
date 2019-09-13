@@ -1,6 +1,7 @@
-" Always set the working directory to the current file's directory
-set autochdir
+" Don't use autochdir (which breaks vim-fugitive), but use similar behavior
+set noautochdir
 let g:netrw_keepdir=0
+autocmd BufEnter * silent! lcd %:p:h
 
 " Set search options
 set ignorecase smartcase gdefault hlsearch
