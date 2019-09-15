@@ -21,5 +21,8 @@ endif
 " Disable ALE because I don't know how to make that ignore the non-lua sections
 ALEDisableBuffer
 
-setlocal sw=2 ts=2 sts=2
-setlocal nolist
+if !exists("pico8_autocommands_loaded")
+    let pico8_autocommands_loaded = 1
+    autocmd BufEnter *.p8 setlocal nolist noexpandtab sw=2 ts=2 sts=2
+    autocmd BufRead *.p8lua setlocal ft=pico8 nolist noexpandtab sw=2 ts=2 sts=2
+endif
