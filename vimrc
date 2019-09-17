@@ -161,6 +161,7 @@ autocmd FileType go set nolist
 
 " vim-gitgutter
 set updatetime=250
+autocmd BufWritePost,BufEnter * GitGutter
 
 " vim-markdown-preview
 let vim_markdown_preview_toggle = 2 " Generate markdown preview on buffer write
