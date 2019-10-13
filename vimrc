@@ -77,6 +77,9 @@ nnoremap <leader>d :put =strftime('%F')<CR>
 nnoremap <leader>f :CtrlPMRUFiles<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 
+" See Git status with <leader>g
+nnoremap <leader>g :Gstatus<CR>
+
 " FILETYPE-SPECIFIC STUFF ====================================================
 " CSS: Make Ctrl + n/p autocomplete more useful
 autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
