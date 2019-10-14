@@ -67,7 +67,7 @@ nnoremap <leader>x :%!XMLLINT_INDENT="    " xmllint --format -<CR>:set ft=xml<CR
 vnoremap <leader>x :!XMLLINT_INDENT="    " xmllint --format -<CR>
 
 " Insert current date with <leader>d
-nnoremap <leader>d :put =strftime('%F')<CR>
+nnoremap <leader>d i<C-R>=strftime('%F')<CR><Esc>
 
 " Use CtrlP to see recent files with <leader>f and buffers with <leader>b
 nnoremap <leader>f :CtrlPMRUFiles<CR>
