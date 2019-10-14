@@ -150,6 +150,9 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
+" vim-better-whitespace
+let g:better_whitespace_enabled=0
+
 " vim-go
 set autowrite
 let g:go_metalinter_autosave = 0
