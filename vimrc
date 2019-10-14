@@ -47,15 +47,11 @@ endif
 
 
 " KEY MAPPINGS ===============================================================
-" Use <Tab> (and alternately backslash) as leader
-let mapleader = "\<Tab>"
-nmap \ <Tab>
+" Use <Space> as leader
+let mapleader = "\<Space>"
 
 " Clear hlsearch with backspace
 nnoremap <backspace> :noh<CR>:<backspace>
-
-" Map <Space> to insert a space before the current character
-nnoremap <Space> i <Esc>
 
 " Refresh several things with F5
 " (ctrp.vim, vim-gitgutter, syntax highlighting weirdness)
