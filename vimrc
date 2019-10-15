@@ -159,6 +159,7 @@ let g:go_fmt_fail_silently = 0
 let g:go_highlight_types = 1
 let g:go_def_mapping_enabled = 0
 let g:go_def_reuse_buffer = 1
+let g:go_version_warning = 0
 autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap gd <Plug>(go-def-split)
