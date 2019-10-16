@@ -58,13 +58,13 @@ nnoremap <backspace> :noh<CR>:<backspace>
 nnoremap <F5> :CtrlPClearCache<CR>:GitGutter<CR>:syntax sync fromstart<CR>
     \:<backspace>
 
-" Format JSON with <leader>fj on a selection or a whole buffer
-nnoremap <leader>fj :%!python -m json.tool<CR>:set ft=json<CR>
-vnoremap <leader>fj :!python -m json.tool<CR>
+" Pretty-print JSON with <leader>fj on a selection or a whole buffer
+nnoremap <leader>pj :%!python -m json.tool<CR>:set ft=json<CR>
+vnoremap <leader>pj :!python -m json.tool<CR>
 
-" Format XML with <leader>fx on a selection or a whole buffer
-nnoremap <leader>fx :%!XMLLINT_INDENT="    " xmllint --format -<CR>:set ft=xml<CR>
-vnoremap <leader>fx :!XMLLINT_INDENT="    " xmllint --format -<CR>
+" Pretty-print XML with <leader>fx on a selection or a whole buffer
+nnoremap <leader>px :%!XMLLINT_INDENT="    " xmllint --format -<CR>:set ft=xml<CR>
+vnoremap <leader>px :!XMLLINT_INDENT="    " xmllint --format -<CR>
 
 " Insert current date with <leader>d
 nnoremap <leader>d i<C-R>=strftime('%F')<CR><Esc>
