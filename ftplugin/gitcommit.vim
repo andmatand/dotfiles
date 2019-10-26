@@ -6,3 +6,4 @@ if !empty(ticket)
 endif
 
 setlocal spell
+setlocal spellcapcheck=
