@@ -145,11 +145,12 @@ function! LinterStatus() abort
     \)
 endfunction
 let g:ale_linters = {
-\    'go': ['go vet', 'golint', 'go build', 'gosimple', 'staticcheck'],
-\    'python': ['flake8'],
+\   'go': ['go vet', 'golint', 'go build', 'gosimple', 'staticcheck'],
+\   'python': ['black'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
+\   'python': ['isort', 'black'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
