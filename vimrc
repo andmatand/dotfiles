@@ -80,6 +80,9 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gl :Gpull<CR>
 nnoremap <leader>gp :Gpush<CR>
 
+" Use S to split the line at the current cursor position
+nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
+
 " FILETYPE-SPECIFIC STUFF ====================================================
 " CSS: Make Ctrl + n/p autocomplete more useful
 autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
