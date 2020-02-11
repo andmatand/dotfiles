@@ -33,7 +33,7 @@ set splitbelow splitright
 set directory=~/.vim/tmp
 set backupdir=~/.vim/tmp
 
-cmap W w ! sudo tee %
+command! W w ! sudo tee %
 
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
