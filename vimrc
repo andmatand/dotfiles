@@ -53,7 +53,7 @@ endif
 let mapleader = "\<Space>"
 
 " Clear hlsearch with backspace
-nnoremap <backspace> :noh<CR>:<backspace>
+nnoremap <backspace> :nohlsearch<CR>:<backspace>
 
 " Refresh several things with F5
 " (ctrp.vim, vim-gitgutter, syntax highlighting weirdness)
@@ -163,6 +163,9 @@ let g:ale_completion_enabled = 1
 
 " vim-better-whitespace
 let g:better_whitespace_enabled=0
+
+" csv.vim
+let g:csv_nomap_bs=1
 
 " vim-go
 set autowrite
