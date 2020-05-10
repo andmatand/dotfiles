@@ -76,9 +76,7 @@ nnoremap <leader>f :CtrlPMRUFiles<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 
 " See Git status with <leader>g
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gl :Gpull<CR>
-nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>g :Gstatus<CR>
 
 " Use S to split the line at the current cursor position
 nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
