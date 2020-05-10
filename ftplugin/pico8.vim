@@ -25,5 +25,6 @@ setlocal nolist noexpandtab sw=2 ts=2 sts=2
 
 if !exists("pico8_autocommands_loaded")
     let pico8_autocommands_loaded = 1
-    autocmd BufEnter *.p8 setlocal nolist noexpandtab sw=2 ts=2 sts=2
+    autocmd BufNewFile,BufRead,BufEnter *.p8 setlocal nolist noet sw=2 ts=2
+        \ sts=2
 endif
