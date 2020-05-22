@@ -18,6 +18,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit
 
@@ -27,8 +28,8 @@ setopt append_history hist_find_no_dups hist_ignore_dups
 setopt auto_cd
 setopt menu_complete
 
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
 
 zmodload zsh/complist
 bindkey -M menuselect '^M' .accept-line
