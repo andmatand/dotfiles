@@ -41,6 +41,13 @@ if has('persistent_undo')
     set undodir=$HOME/.vim/undo
 endif
 
+" Generate .add.spl files for newly modified .add files
+for d in glob('~/.vim/spell/*.add', 1, 1)
+    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+        exec 'mkspell! ' . fnameescape(d)
+    endif
+endfor
+
 " Source .vimrc after saving it
 if has('autocmd')
     autocmd! bufwritepost vimrc source $MYVIMRC
