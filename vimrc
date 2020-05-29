@@ -117,7 +117,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 40
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_root_markers = ['node_modules', '.npmrc', '.nvmrc']
+let g:ctrlp_root_markers = ['node_modules', '.npmrc', '.nvmrc', '.idea']
 
 let g:ctrlp_custom_ignore =
     \ '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
