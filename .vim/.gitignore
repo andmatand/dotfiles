@@ -1,0 +1,7 @@
+/pack/*
+/tmp/*
+/undo/*
+.netrwhist
+vimrc.override
+gvimrc.override
+/spell/*.spl
