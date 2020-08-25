@@ -21,6 +21,7 @@ endif
 " Disable ALE because I don't know how to make that ignore the non-lua sections
 ALEDisableBuffer
 
+let b:sleuth_automatic = 0 " Disable vim-sleuth
 setlocal nolist noexpandtab sw=2 ts=2 sts=2
 
 if !exists("pico8_autocommands_loaded")
