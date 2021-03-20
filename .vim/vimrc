@@ -91,8 +91,8 @@ nnoremap <leader>d i<C-R>=strftime('%F')<CR><Esc>
 nnoremap <leader>f :CtrlPMRUFiles<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 
-" See Git status with <leader>g
-nnoremap <leader>g :Gstatus<CR>
+" (vim-fugitive) See git status with <leader>g
+nnoremap <leader>g :Git<CR>
 
 " Use S to split the line at the current cursor position
 nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
