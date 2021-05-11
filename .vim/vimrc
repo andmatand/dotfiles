@@ -116,6 +116,7 @@ let g:markdown_fenced_languages = [
 \    'json',
 \    'sh',
 \    'xml',
+\    'yaml',
 \]
 
 
