@@ -139,6 +139,7 @@ let g:ctrlp_root_markers = [
     \'.npmrc',
     \'.nvmrc',
     \'.idea',
+    \'requirements.txt',
     \'README.md'
 \]
 
@@ -173,7 +174,7 @@ function! LinterStatus() abort
 endfunction
 let g:ale_linters = {
 \   'go': ['go vet', 'golint', 'go build', 'gosimple', 'staticcheck'],
-\   'python': ['black'],
+\   'python': ['pyright'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
