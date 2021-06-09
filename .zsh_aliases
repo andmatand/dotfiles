@@ -6,3 +6,5 @@ alias ..='cd ..'
 
 # npm
 alias jest='./node_modules/.bin/jest'
+
+alias gs='git status'
