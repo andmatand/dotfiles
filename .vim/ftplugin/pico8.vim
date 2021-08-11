@@ -24,6 +24,8 @@ ALEDisableBuffer
 let b:sleuth_automatic = 0 " Disable vim-sleuth
 setlocal nolist noexpandtab sw=2 ts=2 sts=2
 
+let g:ctrlsf_default_root = 'cwd'
+
 if !exists("pico8_autocommands_loaded")
     let pico8_autocommands_loaded = 1
     autocmd BufNewFile,BufRead,BufEnter *.p8 setlocal nolist noet sw=2 ts=2
