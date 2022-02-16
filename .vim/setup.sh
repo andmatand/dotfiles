@@ -40,11 +40,10 @@ if [ "$unamestr" = 'Linux' ]; then
   set +x
 elif [ "$unamestr" = 'Darwin' ]; then
   set -x
-  brew install vim the_silver_searcher libxml2
-  brew cask install macvim
+  brew install homebrew/cask/macvim
+  brew install the_silver_searcher libxml2
 
   # DejaVu Sans Mono
-  brew tap caskroom/fonts
-  brew cask install font-dejavu-sans
+  brew install homebrew/cask-fonts/font-dejavu
   set +x
 fi
