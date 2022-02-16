@@ -1,9 +1,11 @@
 #!/bin/sh
 
-ln -s $PWD/.zshrc $HOME
-ln -s $PWD/.zshenv $HOME
-ln -s $PWD/.zsh_aliases $HOME
-ln -s $PWD/.vim $HOME
+set -e
+
+ln -fs $PWD/.zshrc $HOME
+ln -fs $PWD/.zshenv $HOME
+ln -fs $PWD/.zsh_aliases $HOME
+ln -fs $PWD/.vim $HOME
 
 cd .vim
 ./setup.sh
