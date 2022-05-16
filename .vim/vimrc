@@ -232,7 +232,7 @@ function! DiffFlag()
     return &diff ? '[diff]' : ''
 endfunction
 set stl=%#WarningMsg#%(\ %{LinterStatus()}\ %)%* " ALE status
-set stl+=%(\ %<➤%{fugitive#head()}\ %)    " git branch
+set stl+=%(\ %<➤%{FugitiveHead()}\ %)    " git branch
 set stl+=\ %f                             " filename
 set stl+=%(\ %y%m%r%w%{DiffFlag()}%)      " flags: help, mod, RO, preview, etc.
 set stl+=%=                               " begin right side
