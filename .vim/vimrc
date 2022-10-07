@@ -175,6 +175,7 @@ endfunction
 let g:ale_linters = {
 \   'go': ['go vet', 'golint', 'go build', 'gosimple', 'staticcheck'],
 \   'python': ['pyright'],
+\   'shell': ['ShellCheck'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
