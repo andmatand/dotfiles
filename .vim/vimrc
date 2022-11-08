@@ -77,8 +77,8 @@ nnoremap <F5> :CtrlPClearCache<CR>:GitGutter<CR>:syntax sync fromstart<CR>
     \:<backspace>
 
 " Pretty-print JSON with <leader>fj on a selection or a whole buffer
-nnoremap <leader>pj :%!python3 -m json.tool<CR>:set ft=json<CR>
-vnoremap <leader>pj :!python3 -m json.tool<CR>
+nnoremap <leader>pj :%!python3 -m json.tool --sort-keys<CR>:set ft=json<CR>
+vnoremap <leader>pj :!python3 -m json.tool --sort-keys<CR>
 
 " Pretty-print XML with <leader>fx on a selection or a whole buffer
 nnoremap <leader>px :%!XMLLINT_INDENT="    " xmllint --format -<CR>:set ft=xml<CR>
