@@ -1,4 +1,4 @@
-let ticket = matchstr(getline(5), 'On branch \([a-z]\+\/\)\?\zs[A-Z]\{2,3}-[0-9]\{1,4}\ze')
+let ticket = matchstr(getline(5), 'On branch \([a-z]\+\/\)\?\zs[A-Z]\{2,4}-[0-9]\{1,4}\ze')
 
 if !empty(ticket)
     call setline('.', '[' . ticket . '] ')
