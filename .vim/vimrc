@@ -178,7 +178,6 @@ let g:ale_linters = {
 \   'shell': ['ShellCheck'],
 \}
 let g:ale_fixers = {
-\   'javascript': ['prettier'],
 \   'python': ['isort', 'black'],
 \}
 let g:ale_fix_on_save = 1
