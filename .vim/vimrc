@@ -74,7 +74,7 @@ nnoremap <backspace> :nohlsearch<CR>:<backspace>
 " Refresh several things with F5
 " (ctrp.vim, vim-gitgutter, syntax highlighting weirdness)
 nnoremap <F5> :CtrlPClearCache<CR>:GitGutter<CR>:syntax sync fromstart<CR>
-    \:<backspace>
+    \:redraw!<CR>
 
 " Pretty-print JSON with <leader>fj on a selection or a whole buffer
 nnoremap <leader>pj :%!python3 -m json.tool --sort-keys<CR>:set ft=json<CR>
