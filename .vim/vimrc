@@ -50,6 +50,9 @@ if has('persistent_undo')
     set undodir=$HOME/.vim/undo
 endif
 
+" Usa entrambi l'italiano e l'inglese per spellcheck
+set spelllang=en_us,it
+
 " Generate .add.spl files for newly modified .add files
 for d in glob('~/.vim/spell/*.add', 1, 1)
     if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
