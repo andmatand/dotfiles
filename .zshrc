@@ -27,6 +27,7 @@ zstyle ':completion:*' menu select
 setopt append_history hist_find_no_dups hist_ignore_dups
 setopt auto_cd
 setopt menu_complete
+unsetopt ignoreeof
 
 autoload -Uz history-search-end
 zle -N history-beginning-search-backward-end history-search-end
