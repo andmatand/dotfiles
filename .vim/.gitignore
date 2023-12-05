@@ -5,3 +5,4 @@
 vimrc.override
 gvimrc.override
 /spell/*.spl
+/spell/*.sug
