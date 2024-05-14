@@ -106,6 +106,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Disable Q for Ex mode since I only ever trigger it accidentally
+nnoremap Q <Nop>
+
 " FILETYPE-SPECIFIC STUFF ====================================================
 " CSS: Make Ctrl + n/p autocomplete more useful
 autocmd FileType css,scss setlocal iskeyword=@,48-57,_,-,?,!,192-255
