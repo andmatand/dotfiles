@@ -185,10 +185,12 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
+\   'c': ['clang-format'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_virtualtext_cursor = 'disabled'
+let g:ale_c_clangformat_use_local_file = 1
 
 " csv.vim
 let g:csv_autocmd_arrange = 1
