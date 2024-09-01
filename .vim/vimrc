@@ -11,6 +11,7 @@ set showcmd " Show selection length in ruler
 set colorcolumn=80
 set completeopt-=preview
 set list
+set ambiwidth=single
 
 " Set default indenting options
 set expandtab shiftwidth=4
