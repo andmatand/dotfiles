@@ -243,7 +243,7 @@ set stl+=%(\ %<➤%{FugitiveHead()}\ %)    " git branch
 set stl+=\ %f                             " filename
 set stl+=%(\ %y%m%r%w%{DiffFlag()}%)      " flags: help, mod, RO, preview, etc.
 set stl+=%=                               " begin right side
-set stl+=%(\ %{SelectionChars()}\ %)      " Chararacter-count in selection
+set stl+=%(\ %{SelectionChars()}\ %)      " Character-count in selection
 set stl+=\ %-9(%l\:%c%)\ %P\              " ruler
 
 set titlestring=%F\ %{ObsessionStatus('[session]','')}
