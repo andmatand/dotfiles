@@ -167,6 +167,14 @@ let g:ctrlsf_winsize = '90%'
 let g:ctrlsf_ignore_dir = ['build']
 
 " ALE
+
+function! CallGdformat(buffer) abort
+    return {
+    \   'command': 'gdformat --line-length=78 -'
+    \}
+endfunction
+execute ale#fix#registry#Add('gdformat', 'CallGdformat', ['gdscript'], 'gdformat for gdscript')
+
 let g:ale_open_list = 0
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -188,11 +196,23 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
 \   'c': ['clang-format'],
+\   'gdscript': ['gdformat'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_c_clangformat_use_local_file = 1
+
+" Allow ALE to autoimport completion entries from LSP servers
+let g:ale_completion_autoimport = 1
+
+" Register LSP server for Godot:
+call ale#linter#Define('gdscript', {
+\   'name': 'godot',
+\   'lsp': 'socket',
+\   'address': '127.0.0.1:6005',
+\   'project_root': 'project.godot',
+\})
 
 " csv.vim
 let g:csv_autocmd_arrange = 1
