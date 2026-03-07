@@ -3,5 +3,3 @@ alias grep='grep --color=auto'
 alias tree='tree -C'
 alias less='less -i'
 alias ..='cd ..'
-
-alias gs='git status'
