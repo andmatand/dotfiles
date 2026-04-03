@@ -99,6 +99,15 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>g :Git<CR>
 let g:nremap = {'-': 'a'}
 
+" (ALE) Run :ALECodeAction with <leader>a
+nnoremap <leader>a :ALECodeAction<CR>
+
+" (ALE) Go to definition with gd
+nnoremap <silent> gd :ALEGoToDefinition<CR>
+
+" (ALE) Find references with gfu ('find usages')
+nnoremap <silent> gfu :ALEFindReferences<CR>
+
 " Use S to split the line at the current cursor position
 nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
 
@@ -192,16 +201,19 @@ let g:ale_linters = {
 \   'go': ['go vet', 'golint', 'go build', 'gosimple', 'staticcheck'],
 \   'python': ['pyright'],
 \   'shell': ['ShellCheck'],
+\   'cpp': ['clangd'],
 \}
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
 \   'c': ['clang-format'],
+\   'cpp': ['clang-format'],
 \   'gdscript': ['gdformat'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_c_clangformat_use_local_file = 1
+let g:ale_cpp_clangd_options = '--query-driver=/opt/libdragon/bin/mips64-elf-g++'
 
 " Allow ALE to autoimport completion entries from LSP servers
 let g:ale_completion_autoimport = 1
