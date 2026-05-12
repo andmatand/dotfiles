@@ -100,13 +100,18 @@ nnoremap <leader>g :Git<CR>
 let g:nremap = {'-': 'a'}
 
 " (ALE) Run :ALECodeAction with <leader>a
-nnoremap <leader>a :ALECodeAction<CR>
+nmap <leader>a <Plug>(ale_code_action)
 
 " (ALE) Go to definition with gd
-nnoremap <silent> gd :ALEGoToDefinition<CR>
+nmap gd <Plug>(ale_go_to_definition)
 
 " (ALE) Find references with gfu ('find usages')
-nnoremap <silent> gfu :ALEFindReferences<CR>
+"nnoremap <silent> gfu :ALEFindReferences<CR>
+nnoremap gfu <Plug>(ale_find_references)
+
+" (ALE) use [l and ]l for ALE errors and warnings
+nmap [l <Plug>(ale_previous)
+nmap ]l <Plug>(ale_next)
 
 " Use S to split the line at the current cursor position
 nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
@@ -184,6 +189,7 @@ function! CallGdformat(buffer) abort
 endfunction
 execute ale#fix#registry#Add('gdformat', 'CallGdformat', ['gdscript'], 'gdformat for gdscript')
 
+let g:ale_set_loclist = 1
 let g:ale_open_list = 0
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -212,8 +218,9 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_virtualtext_cursor = 'disabled'
-let g:ale_c_clangformat_use_local_file = 1
 let g:ale_cpp_clangd_options = '--query-driver=/opt/libdragon/bin/mips64-elf-g++'
+let g:ale_c_clangformat_options = '-style=file -fallback-style=none'
+let g:ale_cpp_clangformat_options = '-style=file -fallback-style=none'
 
 " Allow ALE to autoimport completion entries from LSP servers
 let g:ale_completion_autoimport = 1
