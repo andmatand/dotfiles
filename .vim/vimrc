@@ -207,6 +207,7 @@ let g:ale_linters = {
 \   'go': ['go vet', 'golint', 'go build', 'gosimple', 'staticcheck'],
 \   'python': ['pyright'],
 \   'shell': ['ShellCheck'],
+\   'c': ['clangd'],
 \   'cpp': ['clangd'],
 \}
 let g:ale_fixers = {
